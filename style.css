@@ -1,19 +1,23 @@
 body {
     background-color: #FFFAF6;
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    
 }
 
 header {
     background-color: #FFFAF6; /* Couleur de fond */
     color: black;    /* Couleur du texte */
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 20px;
 }
 
 .menu {
+    flex: 3;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
   }
 
@@ -31,6 +35,9 @@ header {
  }
 
   .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-basis: 20%; /* adjust the width of the logo */
   }
   
@@ -73,6 +80,13 @@ header {
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+
+  .menu-listing {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    margin-right: 100px;
+}
   
   button {
     background-color: #008080; /* Vert foncé */
@@ -102,25 +116,428 @@ header {
     flex-basis: 50%;
     text-align: center;
   }
-  
 
- 
+  .carousel-control {
+    position: absolute;
+    top: 50%; /* Ajustez cette valeur pour déplacer la flèche verticalement */
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
 
-  
+  .carousel1 {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
 
-  
-  
+.carousel1 h2 {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.carousel-container1 {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-slide1 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item1 {
+    min-width: 25%;
+    box-sizing: border-box;
+    padding: 10px 10px;
+}
+
+.carousel-item1 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-caption1 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.carousel-control1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev1 {
+    left: 10px;
+}
+
+.next1 {
+    right: 10px;
+}
+
+.carousel2 {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel2 h2 {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.carousel-container2 {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-slide2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item2 {
+    min-width: 25%;
+    box-sizing: border-box;
+    padding: 10px 10px;
+}
+
+.carousel-item2 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-caption2 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.carousel-control2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev2 {
+    left: 10px;
+}
+
+.next2 {
+    right: 10px;
+}
+
+.carousel-logo {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-logo h2 {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.carousel-logo-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.carousel-logo-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-logo-item {
+    flex: 0 0 16.66%; /* Affiche 6 logos (100% / 6) sur les grands écrans */
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden; /* Assurez-vous que le contenu ne dépasse pas les coins arrondis */
+}
+
+.carousel-logo-item img {
+    width: 100%;
+    height: auto; /* Gardez les proportions de l'image */
+    object-fit: cover;
+    border-radius: 50%; /* Assurez-vous que les images sont rondes */
+}
+
+.carousel-logo-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prevLogo {
+    left: 10px;
+}
+
+.nextLogo {
+    right: 10px;
+}
+
+
+.contact{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 50px;
+}
+
+.contact-section {
+    background-color: #4bbf9c;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-section h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.subheading {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input {
+    height: 40px;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.submit-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #333;
+}
+
+.compagny{
+    display: flex;
+    justify-content: center;
+    height: 600px;
+}
+
+.responsible-company {
+    /* display: flex; */
+    flex-direction: column;
+    /* text-align: center;
+    padding: 20px; */
+    background-color: #00796b;
+    /* border-radius: 10px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 2000px;
+    width: 150%;
+    box-sizing: border-box;
+}
+
+.responsible-company h2 {
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.accordion {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.panel {
+    display: none; /* Masquer initialement tous les panels */
+}
+
+.panel.active {
+    display: block; /* Afficher le panel lorsque la classe active est présente */
+}
+
+
+
+.section-video {
+    padding: 20px;
+    background-color: #00796b;
+}
+
+.container-video {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.title-video {
+    text-align: left;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 pour la vidéo */
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.section-text-video {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta-button-video {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px 20px;
+    /* background-color: #007bff; */
+    /* color: */
+    background-color: #fff; /* Vert foncé */
+    color: #00796b;
+    border: none;
+    /* padding: 10px 20px; */
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+
   /* add media queries to make it responsive */
   @media (max-width: 900px) {
-    .menu-container{
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        display: none;
+   
+    .menu{
+        display:none;
+    }
+    .menu.active {
+        display: block; /* Show the menu when toggled */
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background-color: white;
+        padding: 10px;
+        border: 1px solid #ccc;
         
     }
-    
     .menu-listing{
         flex-direction: column;
     }
@@ -128,6 +545,7 @@ header {
         box-sizing: border-box;
         display: block;
         font-size: 1.5rem;
+        justify-content: right;
     }
     .mobile-menu{
         width: 100%;
@@ -136,13 +554,81 @@ header {
         background: #FFFAF6;
         padding-inline: 20px;
         box-sizing: border-box;
-        display: flex;
+        display: block;
         align-items: center;
         justify-content: right;
-        display:block;
+        
     }
     .logo{
         width: 80px;
         margin-bottom: 20px;
     }
+    .carousel-item {
+        min-width: 50%;
+    }
+
+    .carousel-item2 {
+        min-width: 50%;
+    }
+
+    .contact-section {
+        padding: 20px;
+    }
+
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .carousel-logo-item {
+        flex: 0 0 33.33%; /* Affiche 3 logos sur les écrans moyens */
+    }
 } 
+
+
+@media (max-width: 480px) {
+    .carousel-item {
+        min-width: 100%;
+    }
+
+    .carousel-item2 {
+        min-width: 100%;
+    }
+
+    .contact-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .submit-button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .responsible-company h2 {
+        font-size: 1.5rem;
+    }
+
+    .accordion {
+        font-size: 0.9rem;
+    }
+
+    .carousel-logo-item {
+        flex: 0 0 33.33%; /* Affiche 3 logos sur les petits écrans */
+    }
+}

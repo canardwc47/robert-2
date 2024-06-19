@@ -8,31 +8,32 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="mobile-menu">
-            <span class="material-icons" onclick="toggler()" id="toggler">menu</span>
-        </div>
-        <div class="menu">
-            <div class="logo">
-                <img src="images/cadre-rond-cercle-vecteur-fond-blanc.png" alt="Logo de mon site" loading="lazy">
-              </div>
-          <div class="item-menu">
+  <header>
+    <div class="mobile-menu">
+        <span class="material-icons" onclick="toggler()" id="toggler">menu</span>
+    </div>
+    <div class="logo">
+        <img src="images/cadre-rond-cercle-vecteur-fond-blanc.png" alt="Logo de mon site" loading="lazy">
+    </div>
+    <div class="menu">
+        <div class="item-menu">
             <div class="search-bar">
                 <input type="search" placeholder="Rechercher...">
             </div>
             <div class="nav-search-cta">
                 <nav aria-label="Main navigation">
-                <ul class="menu-listing">
-                  <li><a href="#">Dépannage</a></li>
-                  <li><a href="#">Réparation</a></li>
-                  <li><a href="#">A propos</a></li>
-                </ul>
+                    <ul class="menu-listing">
+                        <li><a href="#">Dépannage</a></li>
+                        <li><a href="#">Réparation</a></li>
+                        <li><a href="#">A-propos</a></li>
+                    </ul>
                 </nav>
                 <button>Contactez-nous</button>
             </div>
-          </div>
         </div>
-      </header>
+    </div>
+</header>
+
       <main>
        <div class="hero-container">
             <div class="hero-text">
@@ -42,6 +43,213 @@
             </div>
           </div>
         </div>
+        <section class="carousel1">
+            <h2>Nos Offres</h2>
+            <div class="carousel-container1">
+                <div class="carousel-slide1">
+                    <div class="carousel-item1">
+                        <img src="images/image1.jpg" alt="Offer 1">
+                        <div class="carousel-caption1">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item1">
+                        <img src="images/image2.jpg" alt="Offer 2">
+                        <div class="carousel-caption1">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item1">
+                        <img src="images/image3.jpg" alt="Offer 3">
+                        <div class="carousel-caption1">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item1">
+                        <img src="images/image4.jpg" alt="Offer 4">
+                        <div class="carousel-caption1">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control1 prev" onclick="prevSlide1()">&#10094;</button>
+            <button class="carousel-control1 next" onclick="nextSlide1()">&#10095;</button>
+        </section>
+        <section class="carousel2">
+            <h2>Nos témoignages</h2>
+            <div class="carousel-container2">
+                <div class="carousel-slide2">
+                    <div class="carousel-item2">
+                        <img src="images/image1.jpg" alt="Offer 1">
+                        <div class="carousel-caption2">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item2">
+                        <img src="images/image2.jpg" alt="Offer 2">
+                        <div class="carousel-caption2">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item2">
+                        <img src="images/image3.jpg" alt="Offer 3">
+                        <div class="carousel-caption2">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item2">
+                        <img src="images/image4.jpg" alt="Offer 4">
+                        <div class="carousel-caption2">
+                            <h3>Title</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control2 prev" onclick="prevSlide2()">&#10094;</button>
+            <button class="carousel-control2 next" onclick="nextSlide2()">&#10095;</button>
+        </section>
+    <section class="contact">
+    <section class="contact-section">
+      <h2>Contactez-nous</h2>
+      <p class="subheading">Subheading for description or instructions</p>
+      <form class="contact-form">
+          <div class="form-group">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Jane">
+          </div>
+          <div class="form-group">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Smitherton">
+          </div>
+          <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="email@janesfakedomain.net">
+          </div>
+          <div class="form-group">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message" placeholder="Enter your question or message"></textarea>
+          </div>
+          <button type="submit" class="submit-button">Envoyer</button>
+      </form>
+  </section>
+</section>
+<section class="compagny">
+<section class="responsible-company">
+  <h2>Une entreprise responsable</h2>
+  <div class="cards-container">
+      <div class="card">
+          <img src="image1.png" alt="Statistique appareils réparés">
+          <p>15 496 appareils réparés cette année</p>
+          <button class="accordion">En savoir plus</button>
+          <div class="panel">
+              <p>Details about the number of devices repaired...</p>
+          </div>
+      </div>
+      <div class="card">
+          <img src="image2.png" alt="Certification ISO">
+          <p>Entreprise certifiée</p>
+          <button class="accordion">En savoir plus</button>
+          <div class="panel">
+              <p>Details about the certification...</p>
+          </div>
+      </div>
+      <div class="card">
+          <img src="image3.png" alt="Bonus réparation">
+          <p>Bonus réparation</p>
+          <button class="accordion">En savoir plus</button>
+          <div class="panel">
+              <p>Details about the repair bonus...</p>
+          </div>
+      </div>
+  </div>
+</section>
+</section>
+<div class="carousel-logo">
+    <h2>Nos Logos</h2>
+    <div class="carousel-logo-container">
+        <div class="carousel-logo-slide">
+            <div class="carousel-logo-item">
+                <img src="logo1.png" alt="Logo 1">
+            </div>
+            <div class="carousel-logo-item">
+                <img src="logo2.png" alt="Logo 2">
+            </div>
+            <div class="carousel-logo-item">
+                <img src="logo3.png" alt="Logo 3">
+            </div>
+            <div class="carousel-logo-item">
+                <img src="logo4.png" alt="Logo 4">
+            </div>
+            <div class="carousel-logo-item">
+                <img src="logo5.png" alt="Logo 5">
+            </div>
+            <div class="carousel-logo-item">
+                <img src="logo6.png" alt="Logo 6">
+            </div>
+            <!-- Ajoutez plus de logos ici si nécessaire -->
+        </div>
+    </div>
+    <button class="carousel-logo-control prev" onclick="prevSlideLogo()">&#10094;</button>
+    <button class="carousel-logo-control next" onclick="nextSlideLogo()">&#10095;</button>
+</div>
+
+<section class="section-video">
+    <div class="container-video">
+        <h2 class="title-video">Nos valeurs</h2>
+        <div class="video-container">
+            <!-- Remplacez 'CODE_DU_LIEN_YOUTUBE' par le code d'intégration fourni par YouTube -->
+            <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/CODE_DU_LIEN_YOUTUBE" allowfullscreen></iframe>
+        </div>
+        <p class="section-text section-text-video">Qui sommes-nous ?</p>
+        <a href="lien/vers/votre/facebook" class="cta-button cta-button-video">Visitez notre Facebook</a>
+    </div>
+</section>
+
+<!-- <footer class="footer">
+    <div class="footer-container">
+        <div class="left-section">
+            <div class="logo">
+                <!-- Insérer votre logo ici -->
+                <!-- <img src="chemin/vers/votre/logo.png" alt="Logo de votre entreprise">
+            </div>
+            <div class="address">
+                <h3>Adresse</h3>
+                <p>123 Rue de l'Adresse<br>Ville, Pays<br>Code Postal</p>
+            </div>
+            <div class="community">
+                <h3>Community</h3>
+                <p>Contactez-nous : info@entreprise.com<br>Téléphone : +123456789</p>
+            </div>
+        </div>
+        <div class="center-section">
+            <!-- Insérer votre carte ici -->
+            <!-- <div id="map"></div>
+        </div>
+        <div class="right-section">
+            <div class="social-media">
+                <h3>Réseaux sociaux</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li> -->
+                    <!-- Ajoutez d'autres réseaux sociaux si nécessaire -->
+                <!-- </ul>
+            </div>
+        </div>
+    </div>
+</footer> --> --> -->
+
+
+
       
 
       </main>

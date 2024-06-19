@@ -1,95 +1,143 @@
-function toggler(){
-    const icon = document.querySelector('#toggler');
-    const menu = document.querySelector('.menu');
-    if(icon.innerHTML == "menu"){
-        icon.innerHTML = "close";
-        menu.style.display = "block";
+function toggler() {
+    var menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
+
+// Variables pour le Carrousel 1
+let currentIndex1 = 0;
+const prev1 = document.querySelector('.carousel1 .prev1');
+const next1 = document.querySelector('.carousel1 .next1');
+const carouselSlide1 = document.querySelector('.carousel1 .carousel-slide1');
+
+function showSlide1(index) {
+    const totalSlides = carouselSlide1.children.length;
+    if (index >= totalSlides) {
+        currentIndex1 = 0;
+    } else if (index < 0) {
+        currentIndex1 = totalSlides - 1;
+    } else {
+        currentIndex1 = index;
     }
-    else{
-        icon.innerHTML = "menu";
-        menu.style.display = "none";
+    carouselSlide1.style.transform = `translateX(-${currentIndex1 * 100}%)`;
+}
+
+function nextSlide1() {
+    showSlide1(currentIndex1 + 1);
+}
+
+function prevSlide1() {
+    showSlide1(currentIndex1 - 1);
+}
+
+// Variables pour le Carrousel 2
+let currentIndex2 = 0;
+const prev2 = document.querySelector('.carousel2 .prev2');
+const next2 = document.querySelector('.carousel2 .next2');
+const carouselSlide2 = document.querySelector('.carousel2 .carousel-slide2');
+
+function showSlide2(index) {
+    const totalSlides = carouselSlide2.children.length;
+    if (index >= totalSlides) {
+        currentIndex2 = 0;
+    } else if (index < 0) {
+        currentIndex2 = totalSlides - 1;
+    } else {
+        currentIndex2 = index;
+    }
+    carouselSlide2.style.transform = `translateX(-${currentIndex2 * 100}%)`;
+}
+
+function nextSlide2() {
+    showSlide2(currentIndex2 + 1);
+}
+
+function prevSlide2() {
+    showSlide2(currentIndex2 - 1);
+}
+
+// Variables pour le Carrousel de logos
+let currentIndexLogo = 0;
+const prevLogo = document.querySelector('.carousel-logo .prevLogo');
+const nextLogo = document.querySelector('.carousel-logo .nextLogo');
+const carouselSlideLogo = document.querySelector('.carousel-logo .carousel-logo-slide');
+
+function showSlideLogo(index) {
+    const totalSlides = carouselSlideLogo.children.length;
+    if (index >= totalSlides) {
+        currentIndexLogo = 0;
+    } else if (index < 0) {
+        currentIndexLogo = totalSlides - 1;
+    } else {
+        currentIndexLogo = index;
+    }
+    carouselSlideLogo.style.transform = `translateX(-${currentIndexLogo * (100 / getVisibleItemsLogo())}%)`;
+}
+
+function nextSlideLogo() {
+    showSlideLogo(currentIndexLogo + 1);
+}
+
+function prevSlideLogo() {
+    showSlideLogo(currentIndexLogo - 1);
+}
+
+function getVisibleItemsLogo() {
+    if (window.innerWidth <= 480) {
+        return 3; // 3 logos sur les petits écrans
+    } else if (window.innerWidth <= 768) {
+        return 3; // 3 logos sur les écrans moyens
+    } else {
+        return 6; // 6 logos sur les grands écrans
     }
 }
 
-
-const carousel = document.querySelector('.carousel');
-const indicators = document.querySelectorAll('.indicator');
-let currentIndex = 0;
-let isDragging = false;
-let startPos = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID;
-let currentSlide = 0;
-
-carousel.addEventListener('mousedown', dragStart);
-carousel.addEventListener('mouseup', dragEnd);
-carousel.addEventListener('mouseleave', dragEnd);
-carousel.addEventListener('mousemove', drag);
-
-carousel.addEventListener('touchstart', dragStart);
-carousel.addEventListener('touchend', dragEnd);
-carousel.addEventListener('touchmove', drag);
-
-indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-        currentSlide = index;
-        updateCarousel(index);
-    });
+// Écouteurs d'événements pour les boutons précédent et suivant des carrousels
+prev1.addEventListener('click', () => {
+    prevSlide1();
 });
 
-function dragStart(event) {
-    isDragging = true;
-    startPos = getPositionX(event);
-    animationID = requestAnimationFrame(animation);
-}
+next1.addEventListener('click', () => {
+    nextSlide1();
+});
 
-function dragEnd() {
-    isDragging = false;
-    cancelAnimationFrame(animationID);
-    const movedBy = currentTranslate - prevTranslate;
+prev2.addEventListener('click', () => {
+    prevSlide2();
+});
 
-    if (movedBy < -100 && currentSlide < indicators.length - 1) {
-        currentSlide += 1;
+next2.addEventListener('click', () => {
+    nextSlide2();
+});
+
+prevLogo.addEventListener('click', () => {
+    prevSlideLogo();
+});
+
+nextLogo.addEventListener('click', () => {
+    nextSlideLogo();
+});
+
+// Réajuster le défilement lors du redimensionnement de la fenêtre pour le Carrousel de logos
+window.addEventListener('resize', () => {
+    showSlideLogo(currentIndexLogo);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.classList.contains('active')) {
+                panel.classList.remove('active'); // Retire la classe active pour cacher le panneau
+            } else {
+                panel.classList.add('active'); // Ajoute la classe active pour afficher le panneau
+            }
+        });
     }
-    if (movedBy > 100 && currentSlide > 0) {
-        currentSlide -= 1;
-    }
-    updateCarousel(currentSlide);
-}
+});
 
-function drag(event) {
-    if (isDragging) {
-        const currentPosition = getPositionX(event);
-        currentTranslate = prevTranslate + currentPosition - startPos;
-    }
-}
 
-function getPositionX(event) {
-    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-}
 
-function animation() {
-    setSliderPosition();
-    if (isDragging) {
-        requestAnimationFrame(animation);
-    }
-}
 
-function setSliderPosition() {
-    carousel.style.transform = `translateX(${currentTranslate}px)`;
-}
 
-function updateCarousel(index) {
-    currentTranslate = -index * 300; // Change 300 to the width of your carousel items if different
-    prevTranslate = currentTranslate;
-    setSliderPosition();
 
-    indicators.forEach((indicator, i) => {
-        if (i === index) {
-            indicator.classList.add('active');
-        } else {
-            indicator.classList.remove('active');
-        }
-    });
-}
