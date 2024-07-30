@@ -44,6 +44,7 @@ header {
   .logo img {
     width: 200px; /* Largeur du logo */
     height: auto; /* Hauteur automatique */
+    overflow: hidden;
 }
 
 .nav-search-cta {
@@ -72,6 +73,7 @@ header {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    overflow: hidden;
   }
   
   .search-bar input {
@@ -105,6 +107,7 @@ header {
     background-size: cover;
     background-position: center;
     height: 600px; /* adjust the height to your needs */
+    overflow: hidden;
   }
   
   .hero-text {
@@ -127,6 +130,7 @@ header {
     font-size: 2rem;
     padding: 10px;
     cursor: pointer;
+    overflow: hidden;
 }
 
   .carousel1 {
@@ -408,6 +412,7 @@ header {
     max-width: 2000px;
     width: 150%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .responsible-company h2 {
@@ -536,6 +541,7 @@ header {
         background-color: white;
         padding: 10px;
         border: 1px solid #ccc;
+        overflow: hidden;
         
     }
     .menu-listing{
@@ -548,7 +554,7 @@ header {
         justify-content: right;
     }
     .mobile-menu{
-        width: 100%;
+        width: 80%;
         top: 0;
         height: 80px;
         background: #FFFAF6;
@@ -565,6 +571,7 @@ header {
     }
     .carousel-item {
         min-width: 50%;
+        overflow: hidden;
     }
 
     .carousel-item2 {
@@ -600,11 +607,11 @@ header {
 
 @media (max-width: 480px) {
     .carousel-item {
-        min-width: 100%;
+        min-width: 80%;
     }
 
     .carousel-item2 {
-        min-width: 100%;
+        min-width: 80%;
     }
 
     .contact-section h2 {
@@ -617,7 +624,7 @@ header {
     }
 
     .card {
-        width: 100%;
+        width: 80%;
     }
 
     .responsible-company h2 {
